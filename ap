@@ -1,0 +1,25 @@
+import streamlit as st
+
+# Application Title & Subtitle
+st.title("Student Marks Calculator")
+st.write("Welcome to the basic Python calculation app for beginners.")
+
+# User Input Section
+student_name = st.text_input("Enter Student Name:")
+
+# Number Input Section for Marks/Numbers
+number1 = st.number_input("Enter Marks in First Subject:", min_value=0.0, max_value=100.0, value=0.0)
+number2 = st.number_input("Enter Marks in Second Subject:", min_value=0.0, max_value=100.0, value=0.0)
+
+# Button to Perform Calculation
+if st.button("Calculate Result"):
+    if student_name:
+        total_marks = number1 + number2
+        average_marks = total_marks / 2
+
+        st.write("------------------------------------")
+        st.write("Student Name:", student_name)
+        st.write("Total Marks:", total_marks)
+        st.write("Average Marks:", average_marks)
+    else:
+        st.write("Please enter the student name first.")
